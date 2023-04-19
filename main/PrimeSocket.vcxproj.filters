@@ -37,9 +37,6 @@
     <ClInclude Include="inclinux_sock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TcpSocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
