@@ -1,10 +1,27 @@
-#pragma once
+/*
+ * MIT License
+ * Copyright (c) 2023 Kamran
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 
-/* RawSocket
-* Create a raw socket providing more control over Internet Protocol or TCP/IP if specified
-* 
-* Currently are in developmenet phase (TODO) and has known issue's, avoid public or important usages
-*/
+#pragma once
 
 // IPv4
 typedef struct ip_hdr
@@ -70,12 +87,12 @@ public:
 	PRIMESOCKET_API char* GetActiveInterfaceAddress();
 
 	/* Enable/Disable the auto IPv4 header generation (enabled by default)
-	* If disabled, you have to also include the IP header in your raw packet data
+	* If disabled, you have to also include the IP header in your packet
 	*/
 	PRIMESOCKET_API void setAutoIpHeaderGenEnabled(bool enabled);
 	/* Set the protocol number (default is 200)
 	* The protocol number is critical for the receiver to understand what packet to look for
-	* If there is a missmatch between sender and receiver protocol numbers, the receiver will never receive the expected packet!
+	* If there is a missmatch between sender and receiver protocol numbers, the receiver will never receive the expected packet
 	* Note: function useless if auto IPv4 header generation is disabled
 	*/
 	PRIMESOCKET_API void setProtocolNumber(int number); // values greater than 253 are not allowed
@@ -84,7 +101,7 @@ public:
 	*/
 	PRIMESOCKET_API void setAutoChecksumEnabled(bool enabled);
 	/* Protocol Identification for the packet's to send (default is 0)
-	* Protocol ID are not the same as Protocol Number, Proto number actually define's the protocol type that are being used on top of IP
+	* Protocol ID are not the same as Protocol Number
 	*/
 	PRIMESOCKET_API void setPacketProtocolId(int id);
 
