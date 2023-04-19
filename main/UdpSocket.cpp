@@ -319,8 +319,6 @@ DWORD UdpSocket::DatagramReadLoop()
 
 void UdpSocket::Close()
 {
-    if (_hMemCallback)
-        TerminateThread(_hMemCallback, 0);
     if (_hReadLoop)
         TerminateThread(_hReadLoop, 0);
     closesocket(_sock);
